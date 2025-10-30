@@ -1,0 +1,16 @@
+## plotting multi-variate pdfs
+corner.corner
+
+## checkpointing: use pickle decorator (from astroML) to save files to disk
+from astroML.utils.decorators import pickle_results
+
+##lambda functions are awesome
+f = lambda x: x+np.sin(x)
+
+##inverting a function using a root finder
+eps = np.random.uniform(0,1,10000)
+samples = [ scipy.optimize.brentq(lambda h: cdf(h)-e, 0, 10) for e in eps]
+
+##tqdm for keeping track of progress
+
+##for inverting a function I can just swap x and y and interpolate
