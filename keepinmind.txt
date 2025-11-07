@@ -18,3 +18,8 @@ samples = [ scipy.optimize.brentq(lambda h: cdf(h)-e, 0, 10) for e in eps]
 
 #given a p value, what was the measurement? inverse survical function
 scipy.stats.binom.isf(1e-3, 20, 0.5)
+
+#vectorise functions!
+@np.vectorize
+def f(args): ...
+
