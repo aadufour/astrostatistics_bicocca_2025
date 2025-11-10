@@ -23,3 +23,7 @@ scipy.stats.binom.isf(1e-3, 20, 0.5)
 @np.vectorize
 def f(args): ...
 
+#credible regions
+for i,l in enumerate(labels):
+    low,med, up = np.percentile(flat_samples[:,i],[5,50,95]) 
+    print(l+"   "+str(med)+" +"+str(up-med)+" -"+str(med-low))
